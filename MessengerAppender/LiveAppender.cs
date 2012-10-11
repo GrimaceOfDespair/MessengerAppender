@@ -68,6 +68,22 @@ namespace MessengerAppender
                                                       }
                                                     };
 
+      _messenger.ContactService.SynchronizationCompleted += (sender, args) =>
+                                                              {
+                                                                lock (_contacts)
+                                                                {
+                                                                  if (LogLog.IsDebugEnabled)
+                                                                  {
+                                                                    LogLog.Debug("Adding contacts");
+                                                                  }
+
+                                                                  foreach (var contact in _messenger.ContactList.All)
+                                                                  {
+                                                                    _contacts[contact.CID] = contact;
+                                                                  }
+                                                                }
+                                                              };
+
       _messenger.Nameserver.ContactOnline += (sender, args) =>
                                                {
                                                  lock (_contacts)
