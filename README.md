@@ -8,13 +8,13 @@ Warning: project is in alpha state
 Example config
 --------------
 
-<log4net>
-  <appender name="LiveAppender" type="MessengerAppender.LiveAppender, MessengerAppender">
-    <username value="********@hotmail.com"/>
-    <password value="********" />
-  </appender>
-  <root>
-    <appender-ref ref="LiveAppender" />
-  </root>
-</log4net>
+    <log4net>
+      <appender name="LiveAppender" type="MessengerAppender.LiveAppender, MessengerAppender">
+        <username value="********@hotmail.com"/>
+        <password value="********" />
+      </appender>
+      <root>
+        <appender-ref ref="LiveAppender" />
+      </root>
+    </log4net>
 
